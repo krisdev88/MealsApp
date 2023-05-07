@@ -28,6 +28,7 @@ class Meal {
   final bool isVegan;
   final bool isVegetarian;
 
+  // TODO poczytaj o rozniach miedzy required i @required, byc moze potrzebujesz tego bez @
   const Meal({
     @required this.id,
     @required this.categories,

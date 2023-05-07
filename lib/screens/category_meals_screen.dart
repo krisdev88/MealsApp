@@ -17,6 +17,7 @@ class CategoryMealsScreen extends StatefulWidget {
 class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
   String categoryTitle;
   List<Meal> displayedMeals;
+  // TODO bool 
   var _loadedInitData = false;
 
   @override
@@ -42,6 +43,7 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
   }
 
   void removeMeal(String mealId) {
+    // TODO inline misiu 
     setState(() {
       displayedMeals.removeWhere((meal) => meal.id == mealId);
     });

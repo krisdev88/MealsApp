@@ -34,6 +34,7 @@ class _TabsScreenState extends State<TabsScreen> {
   }
 
   void _selectPage(int index) {
+    // TODO dajmy arrow inline
     setState(() {
       _selectedPageIndex = index;
     });

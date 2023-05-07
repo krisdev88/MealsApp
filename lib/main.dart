@@ -30,6 +30,8 @@ class _MyAppState extends State<MyApp> {
   void _setFilters(Map<String, bool> filterData) {
     setState(() {
       _filters = filterData;
+      // TODO to dziala na pewno dobrze? Nie wiem dokladnie co to robi w apce ale na pierwszy rzuk oka 
+      // moze sie okazac ze return w pierwszym ifie spowoduje nie wykonanie reszty
       _availableMeals = DUMMY_MEALS.where((meal) {
         if (_filters['gluten'] && !meal.isGlutenFree) {
           return false;
