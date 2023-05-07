@@ -7,7 +7,7 @@ class FiltersScreen extends StatefulWidget {
   final Function saveFilters;
   final Map<String, bool> currentFilters;
 
-  FiltersScreen(this.currentFilters, this.saveFilters);
+  const FiltersScreen(this.currentFilters, this.saveFilters, {Key key}) : super(key: key);
 
   @override
   State<FiltersScreen> createState() => _FiltersScreenState();
@@ -45,10 +45,10 @@ class _FiltersScreenState extends State<FiltersScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Your Filtez'),
+        title: const Text('Your Filtez'),
         actions: [
           IconButton(
-            icon: Icon(Icons.save),
+            icon: const Icon(Icons.save),
             onPressed: () {
               final selectedFilters = {
                 'gluten': _glutenFree,
@@ -65,10 +65,10 @@ class _FiltersScreenState extends State<FiltersScreen> {
       body: Column(
         children: [
           Container(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Text(
               'Adjust your meal selection',
-              style: Theme.of(context).textTheme.headline1,
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
           ),
           Expanded(

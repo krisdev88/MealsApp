@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import './models/category.dart';
 import './models/meal.dart';
 
-const DUMMY_CATEGORIES = const [
+List<Category> DUMMY_CATEGORIES = [
   Category(
     id: 'c1',
     title: 'Italian',
@@ -56,8 +56,8 @@ const DUMMY_CATEGORIES = const [
   ),
 ];
 
-const DUMMY_MEALS = const [
-  Meal(
+List<Meal> DUMMY_MEALS = [
+  const Meal(
     id: 'm1',
     categories: [
       'c1',
@@ -91,7 +91,7 @@ const DUMMY_MEALS = const [
     isVegetarian: true,
     isLactoseFree: true,
   ),
-  Meal(
+  const Meal(
     id: 'm2',
     categories: [
       'c2',
@@ -119,7 +119,7 @@ const DUMMY_MEALS = const [
     isVegetarian: false,
     isLactoseFree: false,
   ),
-  Meal(
+  const Meal(
     id: 'm3',
     categories: [
       'c2',
@@ -151,7 +151,7 @@ const DUMMY_MEALS = const [
     isVegetarian: false,
     isLactoseFree: true,
   ),
-  Meal(
+  const Meal(
     id: 'm4',
     categories: [
       'c4',
@@ -186,7 +186,7 @@ const DUMMY_MEALS = const [
     isVegetarian: false,
     isLactoseFree: false,
   ),
-  Meal(
+  const Meal(
     id: 'm5',
     categories: [
       'c2',
@@ -222,7 +222,7 @@ const DUMMY_MEALS = const [
     isVegetarian: true,
     isLactoseFree: true,
   ),
-  Meal(
+  const Meal(
     id: 'm6',
     categories: [
       'c6',
@@ -258,7 +258,7 @@ const DUMMY_MEALS = const [
     isVegetarian: true,
     isLactoseFree: false,
   ),
-  Meal(
+  const Meal(
     id: 'm7',
     categories: [
       'c7',
@@ -289,7 +289,7 @@ const DUMMY_MEALS = const [
     isVegetarian: true,
     isLactoseFree: false,
   ),
-  Meal(
+  const Meal(
     id: 'm8',
     categories: [
       'c8',
@@ -322,7 +322,7 @@ const DUMMY_MEALS = const [
     isVegetarian: false,
     isLactoseFree: true,
   ),
-  Meal(
+  const Meal(
     id: 'm9',
     categories: [
       'c9',
@@ -371,7 +371,7 @@ const DUMMY_MEALS = const [
     isVegetarian: true,
     isLactoseFree: false,
   ),
-  Meal(
+  const Meal(
     id: 'm10',
     categories: [
       'c2',

@@ -8,14 +8,14 @@ class MealDetailScreen extends StatelessWidget {
   final Function toogleFavorite;
   final Function isFavorite;
 
-  MealDetailScreen(this.toogleFavorite, this.isFavorite);
+  const MealDetailScreen(this.toogleFavorite, this.isFavorite, {Key key}) : super(key: key);
 
   Widget buildSectionTitle(BuildContext context, String text) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       child: Text(
         text,
-        style: Theme.of(context).textTheme.headline1,
+        style: Theme.of(context).textTheme.headlineLarge,
       ),
     );
   }
@@ -27,8 +27,8 @@ class MealDetailScreen extends StatelessWidget {
         border: Border.all(color: Colors.grey),
         borderRadius: BorderRadius.circular(10),
       ),
-      margin: EdgeInsets.all(10),
-      padding: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       height: 150,
       width: 300,
       child: child,
@@ -41,11 +41,11 @@ class MealDetailScreen extends StatelessWidget {
     final selectedMeal = DUMMY_MEALS.firstWhere((meal) => meal.id == mealId);
     return Scaffold(
       appBar: AppBar(
-        title: Text('${selectedMeal.title}'),
+        title: Text(selectedMeal.title),
       ),
       body: SingleChildScrollView(
         child: Column(children: <Widget>[
-          Container(
+          SizedBox(
             height: 300,
             width: double.infinity,
             child: Image.network(
@@ -82,7 +82,7 @@ class MealDetailScreen extends StatelessWidget {
                       selectedMeal.steps[index],
                     ),
                   ),
-                  Divider()
+                  const Divider()
                 ],
               ),
               itemCount: selectedMeal.steps.length,
