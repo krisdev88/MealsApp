@@ -17,7 +17,7 @@ class CategoryMealsScreen extends StatefulWidget {
 class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
   String categoryTitle;
   List<Meal> displayedMeals;
-  var _loadedInitData = false;
+  bool _loadedInitData = false;
 
   @override
   void initState() {
@@ -41,11 +41,8 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
     super.didChangeDependencies();
   }
 
-  void removeMeal(String mealId) {
-    setState(() {
-      displayedMeals.removeWhere((meal) => meal.id == mealId);
-    });
-  }
+  void removeMeal(String mealId) =>
+      setState(() => displayedMeals.removeWhere((meal) => meal.id == mealId));
 
   // final String categoryId;
   @override
