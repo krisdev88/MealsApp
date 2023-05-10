@@ -28,20 +28,19 @@ class Meal {
   final bool isVegan;
   final bool isVegetarian;
 
-  // TODO poczytaj o rozniach miedzy required i @required, byc moze potrzebujesz tego bez @
   const Meal({
-    @required this.id,
-    @required this.categories,
-    @required this.title,
-    @required this.imageUrl,
-    @required this.ingredients,
-    @required this.steps,
-    @required this.duration,
-    @required this.complexity,
-    @required this.affordability,
-    @required this.isGlutenFree,
-    @required this.isLactoseFree,
-    @required this.isVegan,
-    @required this.isVegetarian,
+    this.id,
+    this.categories,
+    this.title,
+    this.imageUrl,
+    this.ingredients,
+    this.steps,
+    this.duration,
+    this.complexity,
+    this.affordability,
+    this.isGlutenFree,
+    this.isLactoseFree,
+    this.isVegan,
+    this.isVegetarian,
   });
 }

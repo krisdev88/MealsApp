@@ -7,7 +7,8 @@ class FiltersScreen extends StatefulWidget {
   final Function saveFilters;
   final Map<String, bool> currentFilters;
 
-  const FiltersScreen(this.currentFilters, this.saveFilters, {Key key}) : super(key: key);
+  const FiltersScreen(this.currentFilters, this.saveFilters, {Key key})
+      : super(key: key);
 
   @override
   State<FiltersScreen> createState() => _FiltersScreenState();
@@ -23,7 +24,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
   void initState() {
     _glutenFree = widget.currentFilters['gluten'];
     _lactoseFree = widget.currentFilters['lactose'];
-    _vegetarian = widget.currentFilters['vegeterian'];
+    _vegetarian = widget.currentFilters['vegetarian'];
     _vegan = widget.currentFilters['vegan'];
     super.initState();
   }
@@ -45,7 +46,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Your Filtez'),
+        title: const Text('Your Filters'),
         actions: [
           IconButton(
             icon: const Icon(Icons.save),
@@ -61,7 +62,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
           )
         ],
       ),
-      drawer: MainDrawer(),
+      drawer: const MainDrawer(),
       body: Column(
         children: [
           Container(
@@ -77,29 +78,25 @@ class _FiltersScreenState extends State<FiltersScreen> {
               _buildSwitchListTitle(
                   'Gluten-free', 'Only include gluten-free meals.', _glutenFree,
                   (newValue) {
-                setState(() {
-                  _glutenFree = newValue;
-                });
-              }),
-              _buildSwitchListTitle('Lactose-free',
-                  'Only include lactose-free meals.', _lactoseFree, (newValue) {
-                setState(() {
-                  _lactoseFree = newValue;
-                });
+                return setState(() => _glutenFree = newValue);
               }),
               _buildSwitchListTitle(
-                  'Vegetarian', 'Only include vegetarian meals.', _vegetarian,
-                  (newValue) {
-                setState(() {
-                  _vegetarian = newValue;
-                });
-              }),
+                  'Lactose-free',
+                  'Only include lactose-free meals.',
+                  _lactoseFree,
+                  (newValue) => setState(() => _lactoseFree = newValue)),
               _buildSwitchListTitle(
-                  'Vegan', 'Only include vegan meals.', _vegan, (newValue) {
-                setState(() {
-                  _vegan = newValue;
-                });
-              }),
+                'Vegetarian',
+                'Only include vegetarian meals.',
+                _vegetarian,
+                (newValue) => setState(() => _vegetarian = newValue),
+              ),
+              _buildSwitchListTitle(
+                'Vegan',
+                'Only include vegan meals.',
+                _vegan,
+                (newValue) => setState(() => _vegan = newValue),
+              ),
             ],
           ))
         ],

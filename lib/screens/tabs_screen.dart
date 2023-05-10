@@ -21,24 +21,19 @@ class _TabsScreenState extends State<TabsScreen> {
   @override
   void initState() {
     _pages = [
-    {
-      'page': const CategoriesScreen(),
-      'title': 'Categories',
-    },
-    {
-      'page': FavoritesScreen(widget.favoriteMeals),
-      'title': 'Your Favorite',
-    },
-  ];
+      {
+        'page': const CategoriesScreen(),
+        'title': 'Categories',
+      },
+      {
+        'page': FavoritesScreen(widget.favoriteMeals),
+        'title': 'Your Favorite',
+      },
+    ];
     super.initState();
   }
 
-  void _selectPage(int index) {
-    // TODO dajmy arrow inline
-    setState(() {
-      _selectedPageIndex = index;
-    });
-  }
+  void _selectPage(int index) => setState(() => _selectedPageIndex = index);
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +41,7 @@ class _TabsScreenState extends State<TabsScreen> {
       appBar: AppBar(
         title: Text(_pages[_selectedPageIndex]['title']),
       ),
-      drawer: MainDrawer(),
+      drawer: const MainDrawer(),
       body: _pages[_selectedPageIndex]['page'],
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,
